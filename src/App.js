@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import useFetch from './hooks/useFetch';
 import UpcomingMovies from './components/UpcomingMovies';
+import PopularMovies from './components/PopularMovies';
 
 import { URLS } from './consts';
 import './App.css';
@@ -27,6 +28,7 @@ function App() {
         <h1>My Movies collection</h1>
       </header>
       <main>
+        <PopularMovies />
         <UpcomingMovies />
       </main>
     </div>

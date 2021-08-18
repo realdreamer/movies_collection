@@ -10,5 +10,6 @@ const MOVIE_BASE_URL = `${BASE_URL}/movie`;
 
 export const URLS = {
   CONFIGURATION: `${BASE_URL}/configuration?api_key=${REACT_APP_API_KEY}`,
-  UPCOMING_MOVIES: `${MOVIE_BASE_URL}/upcoming?api_key=${REACT_APP_API_KEY}`
+  UPCOMING_MOVIES: `${MOVIE_BASE_URL}/upcoming?api_key=${REACT_APP_API_KEY}`,
+  POPULAR_MOVIES: `${MOVIE_BASE_URL}/popular?api_key=${REACT_APP_API_KEY}`,
 }
