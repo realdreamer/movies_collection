@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 export default function useFetch(url, options) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   // abort controller
   const abortContoller = new AbortController();
@@ -13,7 +13,6 @@ export default function useFetch(url, options) {
   const urlWithApiKey = `${url}?api_key=${REACT_APP_API_KEY}`
   useEffect(() => {
     const fetchData = async () => {
-      setLoading(true);
       try {
         const res = await fetch(urlWithApiKey, {
           ...options,
