@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import './index.css';
 
-export default function Thumbnail({title, overview, posterPath, id}) {
+export default function Thumbnail({title, posterPath, id}) {
   return (
     <Link to={`/movie/${id}`} className="movie-thumbnail">
       <div>

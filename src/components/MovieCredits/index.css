@@ -1,0 +1,28 @@
+.credits-container {
+  padding-bottom: 40px;
+}
+
+.credits__wrapper {
+  width: 100%;
+  overflow: auto;
+  padding-bottom: 20px;
+}
+
+.credits__wrapper {
+  scrollbar-width: thin;
+  scrollbar-color: transparent #bbb;
+}
+
+.credits__wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.credits__wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.credits__wrapper::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 4px;
+  border: 2px solid #bbb;
+}
