@@ -9,6 +9,10 @@
   overflow: hidden;
 }
 
+.movie-thumbnail:first-child {
+  margin-left: 0;
+}
+
 .thumbnail__image {
   width: 100%;
 }
