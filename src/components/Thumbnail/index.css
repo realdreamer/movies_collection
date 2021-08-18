@@ -2,11 +2,16 @@
   background-color: #efefef;
   border: 1px solid #dbdbdb;
   padding: 16px;
-  margin: 0 8px;
+  margin: 0 12px;
   display: flex;
   flex-direction: column;
   flex: 0 0 240px;
   overflow: hidden;
+}
+
+a.movie-thumbnail {
+  text-decoration: none;
+  color: #333;
 }
 
 .movie-thumbnail:first-child {
