@@ -8,11 +8,14 @@ export default function useFetch(url, options) {
   // abort controller
   const abortContoller = new AbortController();
 
+  const { REACT_APP_API_KEY } = process.env;
+
+  const urlWithApiKey = `${url}?api_key=${REACT_APP_API_KEY}`
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const res = await fetch(url, {
+        const res = await fetch(urlWithApiKey, {
           ...options,
           signal: abortContoller.signal,
         });
