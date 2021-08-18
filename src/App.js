@@ -16,7 +16,7 @@ function App() {
         <header>
           <h1 className="app__title">My Movies collection</h1>
         </header>
-        <main className="container">
+        <main>
           <Switch>
             <Route exact path="/">
               <Home />
