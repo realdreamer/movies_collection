@@ -1,0 +1,47 @@
+.movie__banner {
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.movie__banner::before {
+  content: '';
+  background: rgb(0 0 0 / 80%);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+}
+
+.movie__meta-info {
+  position: relative;
+  color: #fff;
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  padding: 32px;
+}
+
+.movie__poster {
+  flex: 0 0 300px;
+  display: flex;
+  overflow: hidden;
+}
+
+.move-info {
+  padding-left: 40px;
+}
+
+.movie-info__title {
+  margin: 0;
+  padding-bottom: 4px;
+}
+
+.movie-info__genres {
+  font-size: 14px;
+  color: #dbdbdb;
+  margin: 0;
+}
