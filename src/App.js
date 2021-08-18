@@ -23,11 +23,11 @@ function App() {
   console.log(data, error, loading);
 
   return (
-    <div className="App">
+    <div className="app">
       <header>
-        <h1>My Movies collection</h1>
+        <h1 className="app__title">My Movies collection</h1>
       </header>
-      <main>
+      <main className="container">
         <PopularMovies />
         <UpcomingMovies />
       </main>

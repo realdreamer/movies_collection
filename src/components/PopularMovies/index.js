@@ -11,8 +11,13 @@ export default function PopularMovies() {
   const { results = [] } = data || {};
 
   return (
-    results.map(({ id, title, poster_path, overview }) => (
-      <Thumbnail key={id} title={title} posterPath={poster_path} overview={overview} />
-    ))
+    <div className="mc-flex mc-flex-column">
+      <h2>Popular Movies</h2>
+      <div className="mc-flex mc-flex-row mc-flex-nowrap movies__list-wrapper">
+        {results.map(({ id, title, poster_path, overview }) => (
+          <Thumbnail key={id} title={title} posterPath={poster_path} overview={overview} />
+        ))}
+      </div>
+    </div>
   );
 }

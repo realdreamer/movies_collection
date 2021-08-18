@@ -1,0 +1,22 @@
+.movie-thumbnail {
+  background-color: #efefef;
+  border: 1px solid #dbdbdb;
+  padding: 16px;
+  margin: 0 8px;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 240px;
+  overflow: hidden;
+}
+
+.thumbnail__image {
+  width: 100%;
+}
+
+.thumbnail__title {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 16px 0 0;
+}
