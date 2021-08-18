@@ -1,11 +1,17 @@
 import { useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 import useFetch from './hooks/useFetch';
-import UpcomingMovies from './components/UpcomingMovies';
-import PopularMovies from './components/PopularMovies';
 
 import { URLS } from './consts';
 import './App.css';
+
+import Home from './components/Home';
+import MovieOverview from './components/MovieOverview';
 
 function App() {
   useEffect(() => {
@@ -23,15 +29,23 @@ function App() {
   console.log(data, error, loading);
 
   return (
-    <div className="app">
-      <header>
-        <h1 className="app__title">My Movies collection</h1>
-      </header>
-      <main className="container">
-        <PopularMovies />
-        <UpcomingMovies />
-      </main>
-    </div>
+    <Router>
+      <div className="app">
+        <header>
+          <h1 className="app__title">My Movies collection</h1>
+        </header>
+        <main className="container">
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/movie/:id">
+              <MovieOverview />
+            </Route>
+          </Switch>
+        </main>
+      </div>
+    </Router>
   );
 }
 
