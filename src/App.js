@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import { useEffect } from 'react';
+
+import useFetch from './hooks/useFetch';
+import UpcomingMovies from './components/UpcomingMovies';
+
+import { URLS } from './consts';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    const {
+      REACT_APP_API_BASE_URL,
+      REACT_APP_API_BASE_VERSION,
+      REACT_APP_API_KEY,
+    } = process.env;
+    fetch(`${REACT_APP_API_BASE_URL}/${REACT_APP_API_BASE_VERSION}/movie/now_playing?api_key=${REACT_APP_API_KEY}&language=en-US`)
+      .then(res => res.json())
+      .then(data => console.log(data));
+  }, []);
+
+  const {data, error, loading} = useFetch(URLS.CONFIGURATION);
+  console.log(data, error, loading);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h1>My Movies collection</h1>
       </header>
+      <main>
+        <UpcomingMovies />
+      </main>
     </div>
   );
 }
