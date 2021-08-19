@@ -1,4 +1,4 @@
-import ProfileCard from "../ProfileCard";
+import ProfileCard from '../ProfileCard';
 
 export default function Cast({ data = []}) {
   return (

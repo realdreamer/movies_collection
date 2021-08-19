@@ -19,7 +19,9 @@ export default function MovieOverview() {
 
   const { data, loading, error } = useFetch(url);
 
-  if(loading || error) return null;
+  if(loading) return <p>Loading...</p>;
+
+  if(error) return <p>We lost you..! Please refresh the page and try again!</p>
 
   const {
     title,

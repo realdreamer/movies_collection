@@ -1,7 +1,12 @@
-import ProfileCard from "../ProfileCard";
+import ProfileCard from '../ProfileCard';
 
 export default function Crew({ data }) {
-  const uniqueCrewData = [...new Map(data.map(item => [item.id, item])).values()]
+  const uniqueCrewData = [
+    ...new Map(
+      data.map(item => [item.id, item])
+    ).values()
+  ];
+
   return (
     <div className="cast__section">
       <h2>Crew</h2>

@@ -6,7 +6,9 @@ import Thumbnail from '../Thumbnail';
 export default function PopularMovies() {
   const { data, loading, error } = useFetch(URLS.POPULAR_MOVIES);
 
-  if(loading || error) return null;
+  if(loading) return <p>Loading...</p>;
+
+  if(error) return <p>We lost you..! Please refresh the page and try again!</p>
 
   const { results = [] } = data || {};
 
