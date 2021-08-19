@@ -9,8 +9,10 @@ const MOVIE_BASE_URL = `${BASE_URL}/movie`;
 
 export const URLS = {
   CONFIGURATION: `${BASE_URL}/configuration`,
-  UPCOMING_MOVIES: `${MOVIE_BASE_URL}/upcoming`,
-  POPULAR_MOVIES: `${MOVIE_BASE_URL}/popular`,
-  MOVIE_DETAILS: `${MOVIE_BASE_URL}`,
   GENRES_LIST: `${BASE_URL}/genre/movie/list`,
+  MOVIE_DETAILS: `${MOVIE_BASE_URL}`,
+  NOW_PLAYING: `${MOVIE_BASE_URL}/now_playing`,
+  POPULAR_MOVIES: `${MOVIE_BASE_URL}/popular`,
+  TRENDING_MOVIES: `${BASE_URL}/trending/movie/day`,
+  UPCOMING_MOVIES: `${MOVIE_BASE_URL}/upcoming`,
 }

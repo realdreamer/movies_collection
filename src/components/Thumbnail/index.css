@@ -18,8 +18,15 @@ a.movie-thumbnail {
   margin-left: 0;
 }
 
+.thumbnail__figure {
+  margin: 0;
+  overflow: hidden;
+}
+
 .thumbnail__image {
   width: 100%;
+  transition: all 1s;
+  will-change: transform;
 }
 
 .thumbnail__title {
@@ -28,4 +35,8 @@ a.movie-thumbnail {
   text-overflow: ellipsis;
   white-space: nowrap;
   margin: 16px 0 0;
+}
+
+.movie-thumbnail:hover .thumbnail__image {
+  transform: scale(1.1)
 }

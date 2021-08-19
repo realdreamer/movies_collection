@@ -31,3 +31,33 @@ code {
 .mc-flex-nowrap {
   flex-wrap: nowrap;
 }
+
+.movies__list-wrapper {
+  width: 100%;
+  overflow: auto;
+  padding-bottom: 20px;
+}
+
+.movies__list-wrapper {
+  scrollbar-width: thin;
+  scrollbar-color: transparent #bbb;
+}
+
+.movies__list-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.movies__list-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.movies__list-wrapper::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 4px;
+  border: 2px solid #bbb;
+}
+
+.container {
+  width: 75vw;
+  margin: 0 auto;
+}
