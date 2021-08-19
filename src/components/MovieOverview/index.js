@@ -5,12 +5,12 @@ import { URLS } from '../../consts';
 import useFetch from '../../hooks/useFetch';
 
 import MovieCredits from '../MovieCredits';
-import './index.css';
+import MovieInfo from '../MovieInfo';
 
 export function convertMinsToHrs(mins) {
   const hrs = Math.floor(mins / 60);
-  const remainingMinutes = mins - hrs * 60;
-  return `${hrs}h ${remainingMinutes}min`;
+  const remainingMins = mins - hrs * 60;
+  return `${hrs}h ${remainingMins}min`;
 }
 
 export default function MovieOverview() {
@@ -37,35 +37,22 @@ export default function MovieOverview() {
 
 
   const [year] = release_date.split('-');
-  const movieLength = convertMinsToHrs(runtime);
+  const movieDuration = convertMinsToHrs(runtime);
 
   const genreNames = genres?.map(({ name }) => name).join(', ');
   return (
     <div className="movie__overview">
-      <div className="movie__banner" style={{ backgroundImage: `url(https://image.tmdb.org/t/p/w1280${backdrop_path})` }}>
-        <div className="movie__meta-info">
-          <img
-            src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-            alt={title}
-            className="movie__poster"
-          />
-          <div className="move-info">
-            <h2 className="movie-info__title">{title} ({year})</h2>
-            <p className="movie-info__genres">
-              <strong>Genres:</strong> {genreNames}
-            </p>
-            <div className="mc-flex">
-              <h4 className="movie__rating">Rating: {vote_average}</h4>
-              <span className="mc-dot-separator">&middot;</span>
-              <h4 className="movie__time">Movie duration: {movieLength}</h4>
-            </div>
-            <p className="movie__tagline">{tagline}</p>
-            <h3>Overview</h3>
-            <p className="movie__overview-info">{overview}</p>
-          </div>
-        </div>
-      </div>
-
+      <MovieInfo
+        bannerPath={backdrop_path}
+        genres={genreNames}
+        movieDuration={movieDuration}
+        overview={overview}
+        posterPath={poster_path}
+        rating={vote_average}
+        tagline={tagline}
+        title={title}
+        year={year}
+      />
       <MovieCredits id={id} />
     </div>
   );
